@@ -64,11 +64,7 @@ fi
 #gcloud auth configure-docker
 
 sleep 3s
-echo
-echo "####################push image to google container registry ######################"
-echo
-sudo docker push ${IMAGE_NAME}:${IMAGE_TAG} 
-sleep 3s
+
 echo
 echo "##################### Running and testing image locally before deploying on GKE #######"
 echo
@@ -115,7 +111,11 @@ echo
 
 sudo docker ps
 
-
+echo
+echo "####################push image to google container registry ######################"
+echo
+sudo docker push ${IMAGE_NAME}:${IMAGE_TAG} 
+sleep 3s
  
 echo
 echo '#################################################################'
